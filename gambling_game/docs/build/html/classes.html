@@ -1,0 +1,514 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API" href="api.html" /><link rel="prev" title="Usage" href="usage.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>Classes - The Gambling Game 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">The Gambling Game 1.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">The Gambling Game 1.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Classes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/gamble.html">gamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/bandit.html">bandit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/agent.html">agent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Administration</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h1>
+<p>The Gambling Game is composed of 3 classes: <code class="docutils literal notranslate"><span class="pre">Gamble</span></code>, <code class="docutils literal notranslate"><span class="pre">Bandit</span></code>, and <code class="docutils literal notranslate"><span class="pre">Agent</span></code>.
+During the game, a series of rounds are executed with <code class="docutils literal notranslate"><span class="pre">Gamble.execute_round()</span></code>.
+Each round, <code class="docutils literal notranslate"><span class="pre">Bandits</span></code> are available for <code class="docutils literal notranslate"><span class="pre">Agents</span></code> to select.
+Each <code class="docutils literal notranslate"><span class="pre">Bandit</span></code> has a pre-determined probability of dispensing a reward.
+The goal is for the <code class="docutils literal notranslate"><span class="pre">Agent</span></code> to employ a strategy that optimizes the
+amount of rewards received by the end of the game (when the rounds are exhausted).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The only code you will need to edit/change the <code class="docutils literal notranslate"><span class="pre">Agent</span></code> code. A template is provided in agent_template.py</p>
+</div>
+<section id="module-bandit">
+<span id="bandits"></span><h2>Bandits<a class="headerlink" href="#module-bandit" title="Permalink to this heading">#</a></h2>
+<p>This is the Bandit class.
+A Bandit is a slot machine that has a chance to dispense a static reward amount.
+Bandits are called each round to return a reward based on their probability.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bandit.Bandit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bandit.</span></span><span class="sig-name descname"><span class="pre">Bandit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_amount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bandit.Bandit" title="Permalink to this definition">#</a></dt>
+<dd><p>A slot machine with a probability of returning a static reward.</p>
+<p>Bandit is the object for gambling on in the Gambling Game.
+Each bandit has a unique name, which is typically numerical order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>int</em>) – an identifier for the bandit; typically sequential order</p></li>
+<li><p><strong>probability</strong> (<em>float</em>) – value between 0 and 1 that represents the probability of dispensing a reward</p></li>
+<li><p><strong>reward_amount</strong> (<em>int</em>) – the amount rewarded in pull() based on probability, defaults to 1000</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="bandit.Bandit.pull">
+<span class="sig-name descname"><span class="pre">pull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bandit.Bandit.pull" title="Permalink to this definition">#</a></dt>
+<dd><p>Pull the bandit’s arm to try and win the hidden reward_amount.
+The bandit has a hidden probability of dispensing the reward_amount.
+Reward is discrete - pull() returns either a reward or 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>int</em> of 0 if random number is &gt; reward probability or reward_amount if probability is &lt; reward probability</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p><strong>Notes:</strong></p>
+<p>The current class structure expects an <strong>int</strong> value for <code class="docutils literal notranslate"><span class="pre">reward_amount</span></code>. Future enhancements could return various ranges or distributions.</p>
+<p><strong>Examples:</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bandit</span> <span class="kn">import</span> <span class="n">Bandit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">always_reward_bandit</span> <span class="o">=</span> <span class="n">Bandit</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">always_reward_bandit</span><span class="o">.</span><span class="n">pull</span><span class="p">()</span>
+<span class="go">1000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">never_reward_bandit</span> <span class="o">=</span> <span class="n">Bandit</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">never_reward_bandit</span><span class="o">.</span><span class="n">pull</span><span class="p">()</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</section>
+<section id="module-agent">
+<span id="agents"></span><h2>Agents<a class="headerlink" href="#module-agent" title="Permalink to this heading">#</a></h2>
+<p>This is the Agent class.
+Agents compete in Gamble rounds. Gamble is a game, involving a set of Agents and a
+set of Bandits. Agents choose which bandit to pull each round, and are
+rewarded according to the reward probability of the selected Bandit. The
+Agent with the most rewards at the end of the game (when all rounds are
+complete) is the winner.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.Agent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.</span></span><span class="sig-name descname"><span class="pre">Agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bandits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rounds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.Agent" title="Permalink to this definition">#</a></dt>
+<dd><p>An agent does not know the number of other players (agents)
+Each Agent begins with a reward balance of 0 dollars. The objective is to finish
+the game with as high a balance as possible, or in other words, to minimize
+regret. Regret is the difference between all rewards possible in the game
+and the reward amount the agent received.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bandits</strong> (<em>list</em>) – list of bandit objects</p></li>
+<li><p><strong>num_rounds</strong> (<em>int</em>) – number of rounds in the game</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.Agent.action">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.Agent.action" title="Permalink to this definition">#</a></dt>
+<dd><p>The strategy the agent uses to take choose a bandit; Returns a bandit object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Bandit</em> choosen for this round</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="agent.Agent.name">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#agent.Agent.name" title="Permalink to this definition">#</a></dt>
+<dd><p>The name of the agent instance. This string value is displayed in the competition leaderboard and graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>string</em> that represents the name of the agent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.Agent.update">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bandit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.Agent.update" title="Permalink to this definition">#</a></dt>
+<dd><p>The method to update the agent’s strategy, given a selected bandit and the reward amount.
+The update method is called following the action method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.ExampleAgent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.</span></span><span class="sig-name descname"><span class="pre">ExampleAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bandits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rounds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.ExampleAgent" title="Permalink to this definition">#</a></dt>
+<dd><p>A simple example that pulls the same arm every time, selected randomly at initialization</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.ExampleAgent2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.</span></span><span class="sig-name descname"><span class="pre">ExampleAgent2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bandits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rounds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.ExampleAgent2" title="Permalink to this definition">#</a></dt>
+<dd><p>A simple example that pulls and arm at random</p>
+</dd></dl>
+
+<p><strong>Notes:</strong></p>
+<p>You will need to implement your own <code class="docutils literal notranslate"><span class="pre">Agent</span></code> class, similar to the way in which <code class="docutils literal notranslate"><span class="pre">ExampleAgent</span></code> and <code class="docutils literal notranslate"><span class="pre">ExampleAgent2</span></code> were implemented.</p>
+<p><strong>Examples:</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">agent</span> <span class="kn">import</span> <span class="n">ExampleAgent</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bandit</span> <span class="kn">import</span> <span class="n">Bandit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">always_reward_bandit1</span> <span class="o">=</span> <span class="n">Bandit</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">always_reward_bandit2</span> <span class="o">=</span> <span class="n">Bandit</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bandits</span> <span class="o">=</span> <span class="p">[</span><span class="n">always_reward_bandit</span><span class="p">,</span> <span class="n">always_reward_bandit2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_static_agent</span> <span class="o">=</span> <span class="n">ExampleAgent</span><span class="p">(</span><span class="n">bandits</span><span class="o">=</span><span class="n">bandits</span><span class="p">,</span> <span class="n">num_rounds</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="go">1000</span>
+</pre></div>
+</div>
+</section>
+<section id="module-gamble">
+<span id="gamble"></span><h2>Gamble<a class="headerlink" href="#module-gamble" title="Permalink to this heading">#</a></h2>
+<p>This is the Gamble class.
+Gamble is a game, involving a set of Agents and a set of Bandits.
+Agents are rewarded each round, based on  the reward probability of the Bandit they select.
+The Agent with the most rewards at the end of the game (i.e. when all rounds are
+complete) is the winner.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="gamble.Gamble">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gamble.</span></span><span class="sig-name descname"><span class="pre">Gamble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bandits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamble.Gamble" title="Permalink to this definition">#</a></dt>
+<dd><p>Gamble is a game that can be executed one round at a time.
+The end of the game is determined externally (when no more rounds are executed).
+All of the attributes for tracking performance are available within this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_bandits</strong> (<em>list</em>) – list of bandit objects available in the game</p></li>
+<li><p><strong>_agents</strong> (<em>list</em>) – list of all agent objects participating in the game</p></li>
+<li><p><strong>_agent_rewards</strong> (<em>dictionary</em>) – current rewards for each agent; initially 0</p></li>
+<li><p><strong>_agent_rewards_over_time</strong> (<em>dictionary</em>) – rewards each round for plotting</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gamble.Gamble.execute_round">
+<span class="sig-name descname"><span class="pre">execute_round</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gamble.Gamble.execute_round" title="Permalink to this definition">#</a></dt>
+<dd><p>Play a round of the gambling game.
+Get rewards for all bandidt,
+call all agents to choose their bandit,
+update all agents with their respective rewards,
+and update game data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gamble.Gamble.plot_history">
+<span class="sig-name descname"><span class="pre">plot_history</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gamble.Gamble.plot_history" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a visual representation of how the gambling game has progressed.
+Number of Rounds is on the x-axis and Total Agent Rewards for each agent
+is on the y-axis. Plots a matplotlib graph with each agent.name in
+the legend.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gamble.Gamble.print_final_leaderboard">
+<span class="sig-name descname"><span class="pre">print_final_leaderboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gamble.Gamble.print_final_leaderboard" title="Permalink to this definition">#</a></dt>
+<dd><p>Prints the leaderboard of all agents based on their agent.name and total winnings.
+The leaderboard is sorted and identifies the winning agent.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p><strong>Notes:</strong></p>
+<p>For the Gambling Game, <code class="docutils literal notranslate"><span class="pre">gamble</span></code> will be run from <cite>run_game.py</cite>.</p>
+<p><strong>Examples:</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">agent</span> <span class="kn">import</span> <span class="n">ExampleAgent</span><span class="p">,</span> <span class="n">ExampleAgent2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bandit</span> <span class="kn">import</span> <span class="n">Bandit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gamble</span> <span class="kn">import</span> <span class="n">Gamble</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">always_reward_bandit1</span> <span class="o">=</span> <span class="n">Bandit</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">always_reward_bandit2</span> <span class="o">=</span> <span class="n">Bandit</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bandits</span> <span class="o">=</span> <span class="p">[</span><span class="n">always_reward_bandit</span><span class="p">,</span> <span class="n">always_reward_bandit2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_static_agent</span> <span class="o">=</span> <span class="n">ExampleAgent</span><span class="p">(</span><span class="n">bandits</span><span class="o">=</span><span class="n">bandits</span><span class="p">,</span> <span class="n">num_rounds</span><span class="o">=</span><span class="n">num_rounds</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_random_agent</span> <span class="o">=</span> <span class="n">ExampleAgent2</span><span class="p">(</span><span class="n">bandits</span><span class="o">=</span><span class="n">bandits</span><span class="p">,</span> <span class="n">num_rounds</span><span class="o">=</span><span class="n">num_rounds</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">agents</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_static_agent</span><span class="p">,</span> <span class="n">my_random_agent</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamble</span> <span class="o">=</span> <span class="n">Gamble</span><span class="p">(</span><span class="n">bandits</span><span class="o">=</span><span class="n">bandits</span><span class="p">,</span> <span class="n">agents</span><span class="o">=</span><span class="n">agents</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_rounds</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>       <span class="n">gamble</span><span class="o">.</span><span class="n">execute_round</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="api.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">API</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="usage.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Usage</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Emily Kenney
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Classes</a><ul>
+<li><a class="reference internal" href="#module-bandit">Bandits</a><ul>
+<li><a class="reference internal" href="#bandit.Bandit"><code class="docutils literal notranslate"><span class="pre">Bandit</span></code></a><ul>
+<li><a class="reference internal" href="#bandit.Bandit.pull"><code class="docutils literal notranslate"><span class="pre">Bandit.pull()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-agent">Agents</a><ul>
+<li><a class="reference internal" href="#agent.Agent"><code class="docutils literal notranslate"><span class="pre">Agent</span></code></a><ul>
+<li><a class="reference internal" href="#agent.Agent.action"><code class="docutils literal notranslate"><span class="pre">Agent.action()</span></code></a></li>
+<li><a class="reference internal" href="#agent.Agent.name"><code class="docutils literal notranslate"><span class="pre">Agent.name</span></code></a></li>
+<li><a class="reference internal" href="#agent.Agent.update"><code class="docutils literal notranslate"><span class="pre">Agent.update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#agent.ExampleAgent"><code class="docutils literal notranslate"><span class="pre">ExampleAgent</span></code></a></li>
+<li><a class="reference internal" href="#agent.ExampleAgent2"><code class="docutils literal notranslate"><span class="pre">ExampleAgent2</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-gamble">Gamble</a><ul>
+<li><a class="reference internal" href="#gamble.Gamble"><code class="docutils literal notranslate"><span class="pre">Gamble</span></code></a><ul>
+<li><a class="reference internal" href="#gamble.Gamble.execute_round"><code class="docutils literal notranslate"><span class="pre">Gamble.execute_round()</span></code></a></li>
+<li><a class="reference internal" href="#gamble.Gamble.plot_history"><code class="docutils literal notranslate"><span class="pre">Gamble.plot_history()</span></code></a></li>
+<li><a class="reference internal" href="#gamble.Gamble.print_final_leaderboard"><code class="docutils literal notranslate"><span class="pre">Gamble.print_final_leaderboard()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>

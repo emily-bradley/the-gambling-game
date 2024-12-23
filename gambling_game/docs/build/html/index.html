@@ -1,0 +1,445 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Getting Started" href="getting_started.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>The Gambling Game 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">The Gambling Game 1.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  
+  <span class="sidebar-brand-text">The Gambling Game 1.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/gamble.html">gamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/bandit.html">bandit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/agent.html">agent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Administration</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="welcome-to-the-gambling-game-s-documentation">
+<h1>Welcome to The Gambling Game’s documentation!<a class="headerlink" href="#welcome-to-the-gambling-game-s-documentation" title="Permalink to this heading">#</a></h1>
+<p>The Gambling Game is a hands-on learning exercise for the Data Science Community of Practice.
+It is designed to foster collaborative exploration of the data science topic: Reinforcement Learning.
+To participate in the event, follow the steps under <a class="reference internal" href="#how-submit-an-agent"><span class="std std-ref">How Submit an Agent</span></a>.</p>
+<p>If you want to learn more about the Gambling Game, read on. If you are interested in getting started, check out the <a class="reference internal" href="getting_started.html"><span class="doc">getting started</span></a> section for further information.
+The game framework details are available under <a class="reference internal" href="usage.html"><span class="doc">usage</span></a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="the-gambling-game">
+<h1>The Gambling Game<a class="headerlink" href="#the-gambling-game" title="Permalink to this heading">#</a></h1>
+<p>You are a player in a casino. However, this casino is no ordinary
+casino. It is composed entirely of slot machines. Furthermore,
+these slot machines have a pre-determined and static probability
+of dispensing a reward. And they all pay out at the same rate - $1000!
+It occurs to you that, if you can find the machines with the highest
+probability of giving a reward, you can receive more rewards over time.
+This is your chance to finally beat the house! There is only one problem -
+you have limited resources. These slot machines only accept special
+tokens, of which you only have 1000. You start to wonder,
+given your limited resources, how you might develop a strategy
+for maximizing the amount of money you leave the casino with…</p>
+</section>
+<section id="background">
+<h1>Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h1>
+<p>The casino scenario is an example of a classic data science problem: the multi-armed bandit (MAB) problem.
+In MAB, there exists a set of bandits (such as slot machines) which have some
+hidden probability of dispensing a reward.
+During each round, the player can choose one bandit, or arm, to “pull”.
+The selected choice will either dispense a reward (1000 in our case) or
+return no reward (0).
+The objective is to develop an algorithm that maximizes the rewards
+earned over the entire game.
+Successful strategies can quickly identify the machine or set of machines with the
+highest likelihood of reward.</p>
+<p>This problem demonstrates the data science concept of the exploration/exploitation
+tradeoff.
+Some portion of time (i.e. rounds or tokens) must be spent “exploring”
+bandits in order to further our understanding of the reward probability.
+A strategy that <em>always</em> selects a bandit at random would be an example
+of an “explore only” strategy. This strategy is demonstrated in the
+simulation’s example agent (ExampleAgent):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">static_selection</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bandits</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">action</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_selection</span>
+</pre></div>
+</div>
+<p>Likewise, a strategy that <em>always</em> selects the same bandit would
+be an example of an “exploit only” strategy. This strategy is
+demonstrated in another example agent (ExampleAgent2):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">action</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">bandit_choice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bandits</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">bandit_choice</span>
+</pre></div>
+</div>
+<p>MAB is a reinforcement
+learning problem, which means a player will receive feedback after
+each choice is made. This paradigm enables your agent
+to update its algorithm each round using feedback from the environment. Updating
+your agent can enable more sophisticated approaches than the two defined above.</p>
+<p>In this game, we represent an over-simplified version of the problem,
+in which the reward probabilities are non-changing and rewards remain
+the same across all machines. However, this simulation lends itself to
+expansions on the problem, which are applicable to a variety of real-world
+problems such as:</p>
+<ul class="simple">
+<li><p>design of experimental trials</p></li>
+<li><p>media recommendations (i.e. at movies or music)</p></li>
+<li><p>advertisement personalization</p></li>
+</ul>
+<section id="data-science-terms-and-concepts">
+<h2>Data Science Terms and Concepts<a class="headerlink" href="#data-science-terms-and-concepts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>reinforcement learning</p></li>
+<li><p>explore/exploit</p></li>
+<li><p>regret</p></li>
+<li><p>limited resource allocation dilemma</p></li>
+<li><p>online learning</p></li>
+<li><p>convergence</p></li>
+<li><p>long-tail effect</p></li>
+</ul>
+</section>
+</section>
+<section id="game-framework">
+<h1>Game Framework<a class="headerlink" href="#game-framework" title="Permalink to this heading">#</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">run_game.py</span></code> is the main file in this program; it runs imports and executes the various classes.
+run_game takes 2 parameters: <code class="docutils literal notranslate"><span class="pre">bandits</span></code> and <code class="docutils literal notranslate"><span class="pre">rounds</span></code>. <code class="docutils literal notranslate"><span class="pre">bandits</span></code> represents the number of bandits to
+initialize. This will be the number of available slot machines to explore. The default is 3 slot machines.
+<code class="docutils literal notranslate"><span class="pre">rounds</span></code> is an integer that represents the number of “chances” or “tokens” your agent will be given. Default
+is 1000 rounds.</p>
+<p>Execute a simulation on the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">run_game</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">bandits</span> <span class="mi">3</span> <span class="o">--</span><span class="n">rounds</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Gamble</span></code> class is the heart of the game; it controls each round with <code class="docutils literal notranslate"><span class="pre">execute_round</span></code>.
+<code class="docutils literal notranslate"><span class="pre">Gamble</span></code> represents the environment of the reinforcement learning problem. It retains the
+<code class="docutils literal notranslate"><span class="pre">Agent</span></code> and <code class="docutils literal notranslate"><span class="pre">Bandit</span></code> objects, and tracks the performance of each competitor over time.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Bandit</span></code> class lays out the structure for a slot machine bandit. Bandits are named
+in sequential order (i.e. 1, 2, 3, etc.).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Agent</span></code> class sets the structure for competing in the game.
+<strong>The agent.py file is the *only* file you need to edit</strong>
+You will be responsible for developing your own implementation of an agent class.
+The Agent ABC class must be inherited; all agents should implement an <code class="docutils literal notranslate"><span class="pre">action</span></code> and <code class="docutils literal notranslate"><span class="pre">update</span></code> method.
+The <code class="docutils literal notranslate"><span class="pre">action</span></code> method returns a bandit to pull. The <code class="docutils literal notranslate"><span class="pre">update</span></code> method takes the reward information
+that results from an action.</p>
+<p><strong>note</strong>: A surprise change will be introduced half-way through the competition!
+It would behoove you to think generally about the problem.</p>
+</section>
+<section id="how-to-win">
+<h1>How to Win<a class="headerlink" href="#how-to-win" title="Permalink to this heading">#</a></h1>
+<p>The game objective is to maximize the amount of rewards over time, or to
+<strong>minimize regret</strong>. Regret is the difference between the rewards an
+agent received and the total rewards possible, given the optimal choice
+was selected each round.</p>
+<p>$regret = sum_{i=0}^{n} max(A) - sum_{i=0}^{n} hat{a}$</p>
+<p>Regret is the difference between the sum of all rewards possible
+and the sum of rewards received, where A is the set of all possible actions
+and $hat{a}$ is the action selected or “pulled” at each time step.</p>
+<section id="how-submit-an-agent">
+<h2>How Submit an Agent<a class="headerlink" href="#how-submit-an-agent" title="Permalink to this heading">#</a></h2>
+<section id="create-or-join-a-team">
+<h3>1. Create or join a team!<a class="headerlink" href="#create-or-join-a-team" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fill out <a class="reference external" href="https://forms.office.com/Pages/ResponsePage.aspx?id=3Vb9ntvpv0OER2DUQTtZSpwZgkLsSVpNmp0ZHYTk3ntUOUkxUVRBS1RIQzk4RzhQRUNPMlhBTjJKUy4u">this form</a> to join the event</p></li>
+</ul>
+</section>
+<section id="check-out-a-feature-branch">
+<h3>2. Check out a feature branch<a class="headerlink" href="#check-out-a-feature-branch" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Clone the <a class="reference external" href="https://dev.azure.com/Standard-Insurance/DataScience/_git/data-science-cop?path=/games/gambling_game">data_science_cop repo</a> locally:  <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://Standard-Insurance&#64;dev.azure.com/Standard-Insurance/DataScience/_git/data-science-cop</span></code></p></li>
+<li><p>Checkout a feature branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">my_team_name</span></code></p></li>
+</ul>
+</section>
+<section id="install-requirements">
+<h3>3. Install Requirements<a class="headerlink" href="#install-requirements" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Create a virtual environment <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code></p></li>
+<li><p>Activate the virtual environment <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.venv/bin/activate</span></code></p></li>
+<li><p>Install requirements: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
+<li><p>Test the game: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">run_game.py</span></code></p></li>
+</ul>
+</section>
+<section id="build-and-agent">
+<h3>4. Build and Agent<a class="headerlink" href="#build-and-agent" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Work with your team to create a new agent instance <strong>inside ``agent.py``</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Copy the template</strong> from <code class="docutils literal notranslate"><span class="pre">agent_template.py</span></code> and paste it into <code class="docutils literal notranslate"><span class="pre">agent.py</span></code></p></li>
+<li><p><strong>Name your agent</strong> class and the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute, which will be displayed on the leaderboard.</p></li>
+<li><p><strong>Develop an action strategy</strong> that will choose a bandit object when called</p></li>
+<li><p><strong>Develop an update strategy</strong> that will update your algorithm, give a bandit choice and the reward</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="test-your-competitor">
+<h3>4. Test your competitor<a class="headerlink" href="#test-your-competitor" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">run_game.py</span></code> to import your competitor(s) from <code class="docutils literal notranslate"><span class="pre">agent.py</span></code></p></li>
+<li><p><strong>Tip</strong>: You can develop multiple competitors and have them compete against eachother</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_game.py</span></code> can take in 3 parameters: <code class="docutils literal notranslate"><span class="pre">bandits</span></code>, <code class="docutils literal notranslate"><span class="pre">rounds</span></code>, and <code class="docutils literal notranslate"><span class="pre">plot</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">-b</span></code> number of bandits to initialize</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-r</span></code> number of rounds to run</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-p</span></code> plot indicator (boolean value)</p></li>
+<li><p>example: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">run_game.py</span> <span class="pre">-r</span> <span class="pre">100000</span> <span class="pre">-b</span> <span class="pre">100</span> <span class="pre">-p</span> <span class="pre">True</span></code></p></li>
+</ul>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">test_classes.py</span></code> before submitting a PR</p></li>
+</ul>
+</section>
+<section id="submit-a-pull-request">
+<h3>5. Submit a pull request<a class="headerlink" href="#submit-a-pull-request" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>To submit your agent, create a PR off of your feature branch into main before the due date</p></li>
+<li><p>Final day to submit: <strong>August 4th, 2023</strong></p></li>
+<li><p>Results Announced: <strong>August 7th, 2023</strong></p></li>
+<li><p>Algorithms Presentation: <strong>August 9th, 2023</strong></p></li>
+</ul>
+<p><strong>note:</strong> If your agent wins, please be prepared to give a brief description of the
+algorithm during the August meeting.</p>
+</section>
+</section>
+</section>
+<section id="further-research-and-resources">
+<h1>Further Research and Resources<a class="headerlink" href="#further-research-and-resources" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lilianweng.github.io/posts/2018-01-23-multi-armed-bandit/">Article: What is the Multi-Armed Bandit Problem</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=bkw6hWvh_3k">Video: Multi-Armed Bandit Intro</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=VrFZCGCwzVc">Video: A/B Testing vs Multi-Armed Bandit</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=KoMKgNeUX4k">Real-World Use Case: Spotify Multi-Objective Contextual Bandits Use Case</a></p></li>
+<li><p><a class="reference external" href="https://multithreaded.stitchfix.com/blog/2020/08/05/bandits/">Real-World Use Case: Stitch Fix Multi-Armed Bandit Recommendations</a></p></li>
+<li><p><a class="reference external" href="https://www.jmlr.org/papers/volume5/mannor04b/mannor04b.pdf">Research Paper: The Sample Complexity of Exploration in the Multi-Armed Bandit Problem</a></p></li>
+</ul>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="getting_started.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Getting Started</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Emily Kenney
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>
