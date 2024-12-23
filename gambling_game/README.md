@@ -112,17 +112,14 @@ and $\hat{a}$ is the action selected or "pulled" at each time step.
 
 ### How Submit an Agent
 
-#### 1. Create or join a team!
-   * Fill out [this form](https://forms.office.com/Pages/ResponsePage.aspx?id=3Vb9ntvpv0OER2DUQTtZSpwZgkLsSVpNmp0ZHYTk3ntUOUkxUVRBS1RIQzk4RzhQRUNPMlhBTjJKUy4u) to join the event
-#### 2. Check out a feature branch
-   * Clone the [data_science_cop repo](https://dev.azure.com/Standard-Insurance/DataScience/_git/data-science-cop?path=/games/gambling_game) locally:  `git clone https://Standard-Insurance@dev.azure.com/Standard-Insurance/DataScience/_git/data-science-cop`
+#### 1. Clone the Repo
    * Checkout a feature branch: `git checkout -b my_team_name`
-#### 3. Install Requirements 
+#### 2. Install Requirements 
    * Create a virtual environment `python -m venv .venv`
    * Activate the virtual environment `source .venv/bin/activate`
    * Install requirements: `pip install -r requirements.txt`
    * Test the game: `python run_game.py`
-#### 4. Build and Agent
+#### 3. Build and Agent
    * Work with your team to create a new agent instance **inside `agent.py`**
      1. **Copy the template** from `agent_template.py` and paste it into `agent.py`
      2. **Name your agent** class and the `name` attribute, which will be displayed on the leaderboard.
@@ -138,13 +135,8 @@ and $\hat{a}$ is the action selected or "pulled" at each time step.
      * example: `python run_game.py -r 100000 -b 100 -p True`
    * Run `pytest test_classes.py` before submitting a PR
 #### 5. Submit a pull request
-   * To submit your agent, create a PR off of your feature branch into main before the due date
-   * Final day to submit: **August 4th, 2023**
-   * Results Announced: **August 7th, 2023**
-   * Algorithms Presentation: **August 9th, 2023**
+   * To submit your agent, create a PR off of your feature branch into main
 
-**note:** If your agent wins, please be prepared to give a brief description of the
-algorithm during the August meeting.
 
 # Further Research and Resources
 * [Article: What is the Multi-Armed Bandit Problem](https://lilianweng.github.io/posts/2018-01-23-multi-armed-bandit/)
